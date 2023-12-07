@@ -84,7 +84,7 @@ docker exec -it --user [user] [container name] bash
 nvidia-smi
 ```
 
-### Make the `.local/bin`:
+### Make the `.local/bin`
 
 ```bash
 mkdir -p ~/.local/bin
@@ -134,7 +134,7 @@ TheBloke/dolphin-2.2.1-mistral-7B-GGUF dolphin-2.2.1-mistral-7b.Q4_K_M.gguf \
 --local-dir /home/$USER/.llm/vanilla/models/gguf --local-dir-use-symlinks False
 ```
 
-### Enter python3 cli, and run the following
+### Load the model: Enter python3 cli and run the following
 
 ```python
 from llama_cpp import Llama
