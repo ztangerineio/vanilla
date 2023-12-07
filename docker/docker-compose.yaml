@@ -1,0 +1,23 @@
+version: '3'
+services:
+  nova-zemerald-local:
+    image: alpha:cuda
+    container_name: v-zemerald-local
+    hostname: v.zemerald.local
+    user: flynn
+    ports:
+      - "8080:80"
+    ulimits:
+      memlock:
+        soft: 8192000000
+        hard: 10240000000
+    deploy:
+      resources:
+        limits:
+          cpus: "7"
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
+#EOF
