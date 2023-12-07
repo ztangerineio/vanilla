@@ -51,7 +51,7 @@ To install build the `Vanilla` development container from scratch, follow these 
 ### Clone this repository
 
 ```bash
- git clone https://github.com/yourusername/my-awesome-project.git
+ git clone https://github.com/ztangerineio/vanilla.git
 ```
 
 ### Enter the the directory with the `Dockerfile` and `docker-compose.yaml` files
