@@ -153,12 +153,14 @@ llm_load_tensors: VRAM used: 4095.06 MiB
 .............................................................................................
 ```
 
-> If you do not see the GPU in the loading output but you do see your GPU in the `nvidia-smi` output, then you need to do the following from the Linux command-line to tell `llama-cpp-python` that you have an CUDA-capabale GPU. Then reload the model and continue to the next step.
+> If you do not see the GPU in the loading output but you do see your GPU in the `nvidia-smi` output, then you need to do the following from the Linux command-line to tell `llama-cpp-python` that you have an CUDA-capabale GPU. So, exit the Python cli (exit() or CTRL+D) and run the following.
 
 ```bash
 pip uninstall -y llama-cpp-python
 CMAKE_ARGS="-DLLAMA_CUBLAS=on" FORCE_CMAKE=1 pip install llama-cpp-python --no-cache-dir
 ```
+
+> Then re-enter the Python cli, reload the model and continue to the next step.
 
 ### Test the model
 
