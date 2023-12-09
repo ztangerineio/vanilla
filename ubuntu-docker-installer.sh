@@ -8,6 +8,8 @@ docker_pkgs=("docker-ce" "docker-ce-cli" "containerd.io" "docker-buildx-plugin" 
 user=$(whoami)
 home="/home/$user"
 prompt_user=""
+sleep_medium=$(sleep 0.528)
+sleep_long=$(sleep 0.741)
 
 # Function to print text one character at a time with a random delay
 incoming_transmission() {
@@ -23,22 +25,21 @@ incoming_transmission() {
         sleep "$random_delay"  # Wait for the random delay
     done
 
-    echo  # Print a newline to move to the next line
-
+    echo
 }
 
 # Function: Check user's Bash version for compatibility
 check_bash_version() {
 
     incoming_transmission "Checking system requirements, beginning with bourne shell."
-    sleep 0.528
+    $sleep_medium
 
     required_major_version=4
     current_version=$(bash --version | head -n1 | awk '{print $4}')
     current_major_version=$(bash --version | head -n1 | awk '{print $4}' | cut -d'.' -f1)
 
     if (( current_major_version >= required_major_version )); then
-        incoming_transmission "Your version of Bash ($current_version) meets this scripts requirements. Bashing on!"
+        incoming_transmission "Your version of Bash ($current_version) meets this script's requirements. Bashing on!"
         echo
     else
         incoming_transmission "Your version of Bash ($current_version) does not meet this script's minimum requirements. Bash version $required_major_version.0 or greater is required."
@@ -63,7 +64,7 @@ check_base_essentials() {
 check_apt_repository() {
 
     incoming_transmission "Checking for access to package repositories..."
-    sleep 0.741
+    $sleep_long
 
     local apt_repository="archive.ubuntu.com"
     local apt_port="80"
@@ -89,9 +90,9 @@ check_apt_repository() {
 display_cover() {
 
     echo
-    incoming_transmission "Greetings, Hologram!"
+    incoming_transmission "Ahoy, Hologram!"
     echo
-    sleep 0.528
+    $sleep_medium
 
     cat << "EOF"
      🌟                            *                    🌠  *  
@@ -109,9 +110,9 @@ display_cover() {
          | __\_:____ |  ||o-|            ___/........ . . .. ..
          |/_-|-_|__ \|_ |/--|       ____/  . . .. . . .. ... . 
  ........:| -|- o-o\_:_\|o-/:....../...........................
- ._🌊._._._\=\====o==o==o=/:.._._._._._._.🌊_._._🌊._._._._._._
+ ._🐳._._._\=\====o==o==o=/:.._._._._._._._🐳_._🌊._._._._._._
  _._._.🌊_._\_\ ._._._._.:._._._🌊._._._._._._._._.🌊_._._._._.
- ._🌊._._._._._._._🌊._._._._._._._._._._.🌊_._._._._._._.🌊_._
+ ._🌊._._._._._._._🌊._._._._._._._._._._🌊_._._._._._._.🌊_._
 EOF
 
     incoming_transmission " .............................................................. "
@@ -123,14 +124,14 @@ EOF
 choose_your_path() {
 
     # Prompt the user for their prefered installation experience
-    incoming_transmission "Choose your installation experience..."
-    incoming_transmission "1. Install Docker with prompts. 🤖 🤝 🧑 Interactive installation."
-    incoming_transmission "2. Install Docker without prompts. 🤖 ⚙️  🤷 Fully automated installation."
-    incoming_transmission "3. End program. 🤖 🔫 💥 💥 Terminate the execution of this script."
+    incoming_transmission "Choose your path...."
+    incoming_transmission "1. 🤖 🤝 🧑 Install Docker with prompts. (Interactive installation.)"
+    incoming_transmission "2. 🤖 ⚙️  🤷 Install Docker without prompts. (Fully automated installation.)"
+    incoming_transmission "3. 🤖 🔫 💥 End program. (Terminate the execution of this script.)"
     echo
     sleep 0.25
 
-    incoming_transmission "Choose your path. Press 1, 2, or 3 and press [ENTER]." 
+    incoming_transmission "Press 1, 2, or 3 and press [ENTER]." 
     read -p "" choice
     echo
 

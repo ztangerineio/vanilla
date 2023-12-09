@@ -15,11 +15,10 @@
 2. Docker
    1. Docker installation instructions can be found at <https://docs.docker.com/engine/install/ubuntu/>
    2. Or, you can use the convenience script in this repo. (<https://github.com/ztangerineio/vanilla/blob/main/ubuntu-docker-installer.sh>)
-3. `docker-compose`
-4. A CUDA-capable GPU
-5. Prep your local docker environment and daemon
+3. A CUDA-capable GPU
+4. Local docker environment and daemon prepped with nvidia container toolkit
 
-### Prepare your local docker environment
+### Preparing your local docker environment
 
 ```bash
 # Import the GPG key for the NVIDIA container toolkit
@@ -71,13 +70,13 @@ docker build --no-cache -t alpha:cuda .
 ### Start the container
 
 ```bash
-docker-compose up
+docker compose up
 ```
 
 ### Enter the container
 
 ```bash
-docker exec -it --user [user] [container name] bash
+docker exec -it --user [user] [container_name] bash
 ```
 
 ### Test the container's access to the host's GPU
@@ -133,7 +132,7 @@ CMAKE_ARGS="-DLLAMA_CUBLAS=on" FORCE_CMAKE=1 pip install llama-cpp-python --no-c
 ```bash
 huggingface-cli download \
 TheBloke/dolphin-2.2.1-mistral-7B-GGUF dolphin-2.2.1-mistral-7b.Q4_K_M.gguf \
---local-dir /home/$USER/.llm/vanilla/models/gguf --local-dir-use-symlinks False
+--local-dir /home/"$USER"/.llm/vanilla/models/gguf --local-dir-use-symlinks False
 ```
 
 ### Load the model: Enter python3 cli and run the following
@@ -171,7 +170,7 @@ output = llm(
       "Q: Can you write a limerick about llamas with hats? A: ",
       max_tokens=3072,
       top_p=1.030301,
-      top_k=32,
+      top_k=42,
       temperature=0.96369,
       stop=["Q:"],
       echo=False

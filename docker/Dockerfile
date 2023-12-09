@@ -1,5 +1,5 @@
 # Create a perpetual instance of nvidia/cuda:12.1.1-devel-ubuntu22.04
-## Base image
+## Base image for LLM development wtih GPU support
 FROM nvidia/cuda:12.1.1-devel-ubuntu22.04
 
 ## Get a list of packages installed at origin, and save it to a file
