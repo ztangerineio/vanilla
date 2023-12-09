@@ -13,6 +13,8 @@
 
 1. Ubuntu 22.04
 2. Docker
+   1. Docker installation instructions can be found at <https://docs.docker.com/engine/install/ubuntu/>
+   2. Or, you can use the convenience script in this repo. (<https://github.com/ztangerineio/vanilla/blob/main/ubuntu-docker-installer.sh>)
 3. `docker-compose`
 4. A CUDA-capable GPU
 5. Prep your local docker environment and daemon
