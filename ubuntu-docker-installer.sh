@@ -255,6 +255,7 @@ install_docker() {
     incoming_transmission "Docker installation complete. You'll need to reboot your system/VM, or restart your container for some of the changes to take effect."
     echo
     echo -e "\e[5mREBOOT\e[0m"
+    echo
 }
 
 # Call the installation function
