@@ -5,6 +5,7 @@ base_essentials=("awk" "apt")
 pkg_conflicts=("docker.io" "docker-doc" "docker-compose" "docker-compose-v2" "podman-docker" "containerd" "runc")
 required_pkgs=("ca-certificates" "curl" "gnupg")
 docker_pkgs=("docker-ce" "docker-ce-cli" "containerd.io" "docker-buildx-plugin" "docker-compose-plugin")
+
 user=$(whoami)
 home="/home/$user"
 prompt_user=""
@@ -163,21 +164,6 @@ choose_your_path() {
 
 }
 
-# Show ASCII art splash screen
-display_cover
-
-# Check Bash version before proceeding
-check_bash_version
-
-# Check for the minimum packages required for this script
-check_base_essentials
-
-# Call the function to check APT repository connectivity
-check_apt_repository
-
-# Call the function 'choose_your_path'
-choose_your_path
-
 # Function to install Docker
 install_docker() {
 
@@ -259,6 +245,21 @@ install_docker() {
     echo -e "\e[5mREBOOT\e[0m"
     echo
 }
+
+# Show ASCII art splash screen
+display_cover
+
+# Check Bash version before proceeding
+check_bash_version
+
+# Check for the minimum packages required for this script
+check_base_essentials
+
+# Call the function to check APT repository connectivity
+check_apt_repository
+
+# Call the function 'choose_your_path'
+choose_your_path
 
 # Call the installation function
 install_docker
