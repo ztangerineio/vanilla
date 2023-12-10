@@ -1,5 +1,45 @@
 #!/bin/bash
 
+#===============================================================================
+# Title:           Ubuntu Docker Installer
+# Description:     
+#   The "Ubuntu Docker Installer" is a script designed to streamline the 
+#   installation of Docker on Ubuntu-based systems. It provides both interactive
+#   and automated installation options, ensuring a hassle-free setup process.
+#
+#   This script checks system compatibility, adds the Docker repository, installs
+#   Docker and its dependencies, and configures user permissions. It is ideal for
+#   system administrators and developers who need to quickly set up Docker on
+#   Ubuntu machines.
+# 
+# Author:          Zevon T. Flynn
+# Date:            10-DEC-2023
+# Version:         0.8.8
+# Usage:           ./ubuntu-docker-installer.sh
+# 
+# GitHub Repo:     https://github.com/ztangerineio/vanilla.git
+#
+# License:         MIT License
+#   Permission is hereby granted, free of charge, to any person obtaining a copy
+#   of this software and associated documentation files (the "Software"), to deal
+#   in the Software without restriction, including without limitation the rights
+#   to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+#   copies of the Software, and to permit persons to whom the Software is
+#   furnished to do so, subject to the following conditions:
+# 
+#   The above copyright notice and this permission notice shall be included in all
+#   copies or substantial portions of the Software.
+# 
+#   THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+#   IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+#   FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+#   AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+#   LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+#   OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+#   SOFTWARE.
+#===============================================================================
+
+
 # Declare thy arrays and ye variables
 base_essentials=("awk" "apt")
 pkg_conflicts=("docker.io" "docker-doc" "docker-compose" "docker-compose-v2" "podman-docker" "containerd" "runc")
