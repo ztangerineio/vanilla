@@ -248,7 +248,7 @@ install_docker() {
 
     incoming_transmission "Modifying $home/.docker to give 'docker' group read, write, and execute permissions."
     sudo chmod g+rwx "$home/.docker" -R
-    ls -lstart "$home/.docker"
+    ls -lshtar "$home/.docker"
     
     # Let's make some magic and greet the world.
     docker run hello-world
