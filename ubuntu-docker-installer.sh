@@ -8,6 +8,7 @@ docker_pkgs=("docker-ce" "docker-ce-cli" "containerd.io" "docker-buildx-plugin" 
 user=$(whoami)
 home="/home/$user"
 prompt_user=""
+sleep_short=$(sleep 0.285)
 sleep_medium=$(sleep 0.528)
 sleep_long=$(sleep 0.741)
 
@@ -129,7 +130,7 @@ choose_your_path() {
     incoming_transmission "2. 🤖 ⚙️  🤷 Install Docker without prompts. (Fully automated installation.)"
     incoming_transmission "3. 🤖 🔫 💥 End program. (Terminate the execution of this script.)"
     echo
-    sleep 0.25
+    sleep_short
 
     incoming_transmission "Press 1, 2, or 3 and press [ENTER]." 
     read -p "" choice
