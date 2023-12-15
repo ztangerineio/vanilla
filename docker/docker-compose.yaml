@@ -1,23 +1,23 @@
 version: '3'
 services:
   nova-zemerald-local:
-    image: alpha:cuda
-    container_name: v-zemerald-local
-    hostname: v.zemerald.local
-    user: flynn
+    image: vanilla_ice:cuda
+    container_name: v-ice-local
+    hostname: v.ice.local
+    user: ice
     ports:
       - "8080:80"
-    ulimits:
+    ulimits: # You don't 'need' to set the ulimit, but it will help to increase the number of 'tokens/s' gernerated during inference.
       memlock:
-        soft: 8192000000
-        hard: 10240000000
+        soft: 8192000000  # 8 GB of RAM
+        hard: 10240000000 # 10 GB RAM
     deploy:
       resources:
         limits:
-          cpus: "7"
+          cpus: "7" # Each CPU thread equals a 'cpu'; if you have less than 8 threads, change this to something more sensible for your host system. 
         reservations:
           devices:
             - driver: nvidia
-              count: 1
+              count: 1 # For single GPU host environments.
               capabilities: [gpu]
 #EOF

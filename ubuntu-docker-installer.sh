@@ -14,7 +14,7 @@
 # 
 # Author:          Zevon T. Flynn
 # Date:            10-DEC-2023
-# Version:         0.8.8
+# Version:         0.8.9
 # Usage:           ./ubuntu-docker-installer.sh
 # 
 # GitHub Repo:     https://github.com/ztangerineio/vanilla.git
@@ -39,6 +39,17 @@
 #   SOFTWARE.
 #===============================================================================
 
+#===============================================================================
+#
+# Remaining To-Dos:
+#   Add Error Handling
+#   Add Garbage Collection
+#   Improve feedback loops for a better usr experience
+#   Add more comprehensive comments
+#
+# Updated:          Friday, 15-DEC-2023
+#
+#===============================================================================
 
 # Declare thy arrays and ye variables
 base_essentials=("awk" "apt")

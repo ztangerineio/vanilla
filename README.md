@@ -1,6 +1,6 @@
-# A Vanilla Docker Container
+# A Vanilla ICE Docker Container
 
-## `LLM Application Development`
+## A vanilla `independent containerized environment` for LLM application development
 
 ### Use this repository to build and run a new docker container for the development of LLM-based applications
 
@@ -13,10 +13,10 @@
 
 1. Ubuntu 22.04
 2. Docker
-   i. Docker installation instructions for Ubuntu distributions can be found at <https://docs.docker.com/engine/install/ubuntu/>
-   ii. Or, you can use the convenience script in this repo. (<https://github.com/ztangerineio/vanilla/blob/main/ubuntu-docker-installer.sh>)
+   1. Docker installation instructions for Ubuntu distributions can be found at <https://docs.docker.com/engine/install/ubuntu/>
+   2. Or, you can use the convenience script in this repo. (<https://github.com/ztangerineio/vanilla/blob/main/ubuntu-docker-installer.sh>)
 3. A CUDA-capable GPU (This will work with CPU only)
-4. Local docker environment and daemon prepped with nvidia container toolkit
+4. Local docker environment and daemon prepped with the nvidia container toolkit
 
 ### Preparing your local docker environment
 
@@ -30,7 +30,7 @@ curl -s -L https://nvidia.github.io/libnvidia-container/stable/deb/nvidia-contai
   sudo tee /etc/apt/sources.list.d/nvidia-container-toolkit.list
 
 # Update APT repositories
-sudo apt-get update
+sudo apt update
 
 # Configure NVIDIA runtime for Docker
 sudo nvidia-ctk runtime configure --runtime=docker
@@ -47,7 +47,7 @@ sudo docker run --rm --runtime=nvidia --gpus all ubuntu nvidia-smi
 
 ## Installation
 
-To install build the `Vanilla` development container from scratch, follow these steps:
+To install build the `Vanilla ICE` development container from scratch, follow these steps:
 
 ### Clone this repository
 
@@ -64,7 +64,7 @@ cd docker
 ### Build the image
 
 ```bash
-docker build --no-cache -t alpha:cuda .
+docker build --no-cache -t vanilla_ice:cuda .
 ```
 
 ### Start the container
